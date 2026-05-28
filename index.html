@@ -292,7 +292,7 @@ header.on-light.scrolled {
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
-.header.on-light .header-cta { background: var(--quell); color: var(--figueroa); }
+header.on-light .header-cta { background: var(--quell); color: var(--figueroa); }
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -1316,6 +1316,461 @@ footer .footer-bottom {
 }
 
 /* ============================================================ */
+/* BRIGHT SECTIONS — warm cream + Quell text                     */
+/* ============================================================ */
+.section-bright {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 232, 188, 0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 130% 100% at 50% 100%, rgba(80, 65, 40, 0.10) 0%, transparent 65%),
+    var(--figueroa);
+  color: var(--quell);
+  position: relative;
+}
+
+/* ============================================================ */
+/* PRACTICES OVERVIEW                                           */
+/* ============================================================ */
+.section-practices { padding: clamp(60px, 7vw, 100px) 0; }
+.practices-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.practices-header .eyebrow { margin-bottom: 16px; opacity: 0.6; }
+.practices-header h2 {
+  font-size: clamp(32px, 4vw, 56px);
+  max-width: 20ch;
+  margin: 0 auto;
+}
+.practices-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.practice-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--quell-deep);
+  color: var(--figueroa);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.practice-card:hover { transform: translateY(-4px); }
+.practice-card .pc-photo {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+.practice-card:hover .pc-photo { transform: scale(1.05); }
+.practice-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(15,18,20,0.15) 0%, rgba(15,18,20,0.3) 50%, rgba(8,12,14,0.85) 100%);
+}
+.practice-card .pc-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.practice-card .pc-num {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+.practice-card .pc-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 2.6vw, 40px);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+.practice-card .pc-name .it { font-style: italic; font-weight: 400; }
+.practice-card .pc-copy {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.45;
+  opacity: 0.92;
+  margin-bottom: 18px;
+}
+.practice-card .pc-link {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+.practice-1 .pc-photo { background-image: url('photos/reformer.png'); }
+.practice-2 .pc-photo { background-image: url('photos/sauna.png'); }
+.practice-3 .pc-photo { background-image: url('photos/treatment-room.png'); }
+
+@media (min-width: 768px) {
+  .practices-grid { grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+}
+
+/* ============================================================ */
+/* NEVER DONE PILATES (beginners)                               */
+/* ============================================================ */
+.section-beginners { padding: clamp(80px, 9vw, 130px) 0; }
+.beg-header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.beg-header .eyebrow { margin-bottom: 18px; opacity: 0.6; }
+.beg-header h2 { margin-bottom: 22px; }
+.beg-header .sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.4;
+  opacity: 0.85;
+}
+.beg-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  max-width: 1080px;
+  margin: 0 auto 56px;
+}
+.beg-card {
+  padding: 32px 0;
+  border-top: 1px solid rgba(66, 81, 83, 0.25);
+}
+.beg-card .num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 26px;
+  opacity: 0.55;
+  margin-bottom: 14px;
+}
+.beg-card .title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(24px, 2vw, 30px);
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+.beg-card .title .it { font-style: italic; font-weight: 400; }
+.beg-card .body {
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.65;
+  opacity: 0.78;
+  max-width: 36ch;
+}
+.beg-cta { text-align: center; }
+
+@media (min-width: 768px) {
+  .beg-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .beg-card { border-top: none; border-top: 1px solid rgba(66, 81, 83, 0.25); padding-top: 28px; }
+}
+
+/* ============================================================ */
+/* BENEFIT CARDS (Pilates + Sauna)                              */
+/* ============================================================ */
+.section-practice { padding: clamp(80px, 9vw, 130px) 0; }
+.practice-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-bottom: 56px;
+  align-items: end;
+}
+.practice-header .eyebrow { margin-bottom: 14px; opacity: 0.62; }
+.practice-header h2 { margin-bottom: 22px; max-width: 16ch; }
+.practice-header h2 .it { font-style: italic; font-weight: 400; }
+.practice-header .copy {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.45;
+  opacity: 0.82;
+  max-width: 40ch;
+}
+.benefit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(66, 81, 83, 0.18);
+  margin-bottom: 56px;
+}
+.benefit-card {
+  background: var(--figueroa);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 200px;
+}
+.benefit-card .b-num {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  color: var(--mushroom);
+  opacity: 0.7;
+}
+.benefit-card .b-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--mushroom);
+  opacity: 0.82;
+}
+.benefit-card .b-value {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(40px, 4vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--quell);
+}
+.benefit-card .b-value.italic { font-style: italic; font-weight: 400; }
+.benefit-card .b-value .unit {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 0.4em;
+  letter-spacing: 0.04em;
+  margin-left: 6px;
+  opacity: 0.78;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.benefit-card .b-sub {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.7;
+  margin-top: auto;
+}
+.practice-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.practice-detail .pd-photo {
+  aspect-ratio: 5 / 4;
+  background-size: cover;
+  background-position: center;
+}
+.practice-detail .pd-text {
+  font-family: var(--sans);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.7;
+  opacity: 0.88;
+  max-width: 44ch;
+}
+.practice-detail .pd-text p { margin-bottom: 18px; }
+.practice-detail .pd-cta { margin-top: 18px; }
+
+@media (min-width: 768px) {
+  .practice-header { grid-template-columns: 1fr 1fr; gap: 56px; }
+  .benefit-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1024px) {
+  .practice-detail { grid-template-columns: 1fr 1fr; gap: 64px; }
+}
+
+/* ============================================================ */
+/* FOUNDING — BRIGHT VARIANT                                    */
+/* ============================================================ */
+.section-founding.bright {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 230, 180, 0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 130% 100% at 50% 100%, rgba(80, 65, 40, 0.12) 0%, transparent 65%),
+    var(--figueroa);
+  color: var(--quell);
+}
+.section-founding.bright::before { display: none; }
+.section-founding.bright .spots-counter {
+  background: rgba(255, 252, 246, 0.7);
+  border-color: rgba(66, 81, 83, 0.32);
+}
+.section-founding.bright .spots-counter .num { color: var(--quell); }
+.section-founding.bright .spots-counter .lab { color: var(--mushroom); }
+.section-founding.bright .spots-bar {
+  background: rgba(66, 81, 83, 0.18);
+}
+.section-founding.bright .spots-bar-fill {
+  background: var(--quell);
+  opacity: 0.85;
+}
+.section-founding.bright .founder-side .body { opacity: 0.78; }
+.section-founding.bright .founder-side .attr { opacity: 0.7; }
+.section-founding.bright .founder-side .attr-line { opacity: 0.4; }
+.section-founding.bright .founding-perks-mini { border-bottom-color: rgba(66, 81, 83, 0.22); }
+.section-founding.bright .founding-perks-mini .check { color: var(--quell); opacity: 0.6; }
+.section-founding.bright .signup-form {
+  background: rgba(255, 252, 246, 0.55);
+  border: 1px solid rgba(66, 81, 83, 0.18);
+}
+.section-founding.bright .form-field label { color: var(--mushroom); opacity: 0.85; }
+.section-founding.bright .form-field input,
+.section-founding.bright .form-field select {
+  color: var(--quell);
+  border-color: rgba(66, 81, 83, 0.32);
+}
+.section-founding.bright .form-field input::placeholder {
+  color: rgba(66, 81, 83, 0.4);
+}
+.section-founding.bright .form-field input:focus,
+.section-founding.bright .form-field select:focus { border-color: var(--quell); }
+.section-founding.bright .form-radio-group label {
+  border-color: rgba(66, 81, 83, 0.32);
+  color: var(--quell);
+}
+.section-founding.bright .form-radio-group input:checked + label {
+  background: var(--quell);
+  color: var(--figueroa);
+  border-color: var(--quell);
+}
+.section-founding.bright .form-submit {
+  background: var(--quell);
+  color: var(--figueroa);
+}
+.section-founding.bright .form-submit:hover { background: var(--quell-deep); }
+.section-founding.bright .form-success .thanks {
+  background: rgba(66, 81, 83, 0.06);
+  border-color: rgba(66, 81, 83, 0.22);
+}
+
+/* Friend referral inline note */
+.friend-cta {
+  margin-top: 16px;
+  padding: 16px 18px;
+  background: rgba(66, 81, 83, 0.06);
+  border-left: 2px solid var(--quell);
+  border-radius: 0 4px 4px 0;
+}
+.friend-cta .friend-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.friend-cta input[type="checkbox"] {
+  margin-top: 4px;
+  width: 16px; height: 16px;
+  accent-color: var(--quell);
+  flex-shrink: 0;
+}
+.friend-cta label {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--quell);
+  cursor: pointer;
+}
+.friend-cta label .it {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ============================================================ */
+/* NEWSLETTER (secondary capture)                                */
+/* ============================================================ */
+.section-newsletter {
+  background: var(--mushroom);
+  color: var(--figueroa);
+  padding: clamp(70px, 7vw, 100px) 0;
+}
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 980px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+.newsletter-inner .eyebrow { margin-bottom: 16px; opacity: 0.7; }
+.newsletter-inner h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.newsletter-inner h3 .it { font-style: italic; font-weight: 400; }
+.newsletter-inner .copy {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(16px, 1.4vw, 20px);
+  opacity: 0.86;
+  margin-bottom: 28px;
+  max-width: 44ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+.newsletter-form input {
+  padding: 14px 18px;
+  background: transparent;
+  border: 1px solid rgba(242, 235, 221, 0.32);
+  color: var(--figueroa);
+  font-family: var(--sans);
+  font-size: 15px;
+  border-radius: 999px;
+  text-align: center;
+}
+.newsletter-form input:focus { outline: none; border-color: var(--figueroa); }
+.newsletter-form input::placeholder { color: rgba(242, 235, 221, 0.45); }
+.newsletter-form button {
+  padding: 14px 24px;
+  background: var(--figueroa);
+  color: var(--mushroom);
+  border: none;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.newsletter-form button:hover { background: #fff; }
+.newsletter-success {
+  display: none;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(17px, 1.5vw, 21px);
+  opacity: 0.92;
+  padding: 14px 0;
+}
+.newsletter-success.show { display: block; }
+.newsletter-form.hidden { display: none; }
+
+@media (min-width: 768px) {
+  .newsletter-form { flex-direction: row; }
+  .newsletter-form input { flex: 1; text-align: left; }
+}
+
+/* ============================================================ */
 /* MOBILE STICKY CTA                                            */
 /* ============================================================ */
 .mobile-sticky-cta {
@@ -1395,6 +1850,51 @@ footer .footer-bottom {
   <div class="scroll-cue">Scroll</div>
 </section>
 
+<!-- PRACTICES OVERVIEW (NEW) -->
+<section class="section-bright section-practices" id="practices">
+  <div class="container">
+    <div class="practices-header fade-in">
+      <div class="eyebrow">What We Do</div>
+      <h2>Three practices, <em class="italic">one ritual.</em></h2>
+    </div>
+    <div class="practices-grid">
+      <a href="#pilates" class="practice-card practice-1 fade-in">
+        <div class="pc-photo"></div>
+        <div class="pc-content">
+          <span class="pc-num">01 · Practice</span>
+          <div>
+            <h3 class="pc-name">Reformer<br><span class="it">Pilates.</span></h3>
+            <p class="pc-copy">Low-impact strength on a spring-loaded reformer. Guided. Adjustable. For any level.</p>
+            <span class="pc-link">Learn more →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#sauna" class="practice-card practice-2 fade-in">
+        <div class="pc-photo"></div>
+        <div class="pc-content">
+          <span class="pc-num">02 · Practice</span>
+          <div>
+            <h3 class="pc-name">Infrared<br><span class="it">Sauna.</span></h3>
+            <p class="pc-copy">Post-class reset in warm, quiet, infrared heat. The second half of the ritual.</p>
+            <span class="pc-link">Learn more →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#events" class="practice-card practice-3 fade-in">
+        <div class="pc-photo"></div>
+        <div class="pc-content">
+          <span class="pc-num">03 · Practice</span>
+          <div>
+            <h3 class="pc-name">Community<br><span class="it">+ events.</span></h3>
+            <p class="pc-copy">Founder previews, bring-a-friend classes, Sunday resets. The local third place.</p>
+            <span class="pc-link">Learn more →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- RITUAL -->
 <section class="section section-ritual" id="ritual">
   <div class="container">
@@ -1467,42 +1967,141 @@ footer .footer-bottom {
   </div>
 </section>
 
-<!-- PILATES -->
-<section class="section-pilates split-section" id="pilates">
-  <div class="image-side" aria-hidden="true"></div>
-  <div class="text-side fade-in">
-    <div class="eyebrow">01 · Reformer Pilates</div>
-    <h2>Low-impact does not mean <em class="italic">easy.</em></h2>
-    <p class="copy">Reformer Pilates builds strength through control, resistance, and guided movement. You don't need to be flexible. You don't need experience. You just need a place that makes starting feel less intimidating.</p>
-    <ul class="bullets">
-      <li>Beginner-friendly classes</li>
-      <li>Small-group instructor-guided sessions</li>
-      <li>Low-impact strength and control</li>
-      <li>Private and semi-private reformer options</li>
-    </ul>
-    <a href="#founding" class="btn-link">Start with the Founding 250 →</a>
+<!-- NEVER DONE PILATES (NEW — beginner reassurance) -->
+<section class="section-bright section-beginners" id="beginners">
+  <div class="container">
+    <div class="beg-header fade-in">
+      <div class="eyebrow">For First Timers</div>
+      <h2>Never done Pilates? <em class="italic">Perfect.</em></h2>
+      <p class="sub">Beginners are the default at FlexFit. The reformer adjusts to you, not the other way around.</p>
+    </div>
+    <div class="beg-grid">
+      <div class="beg-card fade-in">
+        <div class="num">i.</div>
+        <h3 class="title">The reformer <em class="italic">adjusts.</em></h3>
+        <p class="body">Springs, straps, foot bars — every movement scales to your body. No prerequisites. No prior strength required.</p>
+      </div>
+      <div class="beg-card fade-in">
+        <div class="num">ii.</div>
+        <h3 class="title">Instructors <em class="italic">guide.</em></h3>
+        <p class="body">Small groups, max 8. Every cue is for you, not the room. You'll never wonder if you're doing it right.</p>
+      </div>
+      <div class="beg-card fade-in">
+        <div class="num">iii.</div>
+        <h3 class="title">Slow is the <em class="italic">default.</em></h3>
+        <p class="body">Pilates is control, not chaos. Low-impact strength built through repetition. No jumping, no shouting, no race.</p>
+      </div>
+    </div>
+    <div class="beg-cta fade-in">
+      <a href="#founding" class="btn btn-primary on-light">Reserve your founding spot</a>
+    </div>
   </div>
 </section>
 
-<!-- SAUNA -->
-<section class="section-sauna split-section" id="sauna">
-  <div class="image-side" aria-hidden="true"></div>
-  <div class="text-side fade-in">
-    <div class="eyebrow">02 · Infrared Sauna</div>
-    <h2>Pilates first. <em class="italic">Sauna after.</em></h2>
-    <p class="copy">The sauna is not an add-on. It's the second half of the FlexFit ritual — a warm, quiet space to sweat, slow down, and reset before you leave.</p>
-    <ul class="bullets">
-      <li>Post-class sweat and reset</li>
-      <li>Quiet, intentional recovery</li>
-      <li>Included with Founding membership</li>
-      <li>Designed as a real ritual, not a feature</li>
-    </ul>
-    <a href="#founding" class="btn-link">See the ritual →</a>
+<!-- PILATES (RESTRUCTURED — bright + benefit cards) -->
+<section class="section-bright section-practice" id="pilates">
+  <div class="container">
+    <div class="practice-header fade-in">
+      <div>
+        <div class="eyebrow">01 · Reformer Pilates</div>
+        <h2>Strength, slowed <em class="italic">down.</em></h2>
+      </div>
+      <p class="copy">Reformer Pilates builds strength through control, resistance, and guided movement. Small groups, big breathing room.</p>
+    </div>
+    <div class="benefit-grid fade-in">
+      <div class="benefit-card">
+        <div class="b-num">01</div>
+        <div class="b-label">Duration</div>
+        <div class="b-value">50<span class="unit">min</span></div>
+        <p class="b-sub">A single guided reformer session.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-num">02</div>
+        <div class="b-label">Class size</div>
+        <div class="b-value">8<span class="unit">max</span></div>
+        <p class="b-sub">Small groups. Every cue is for you.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-num">03</div>
+        <div class="b-label">Intensity</div>
+        <div class="b-value italic">Low<span class="unit">impact</span></div>
+        <p class="b-sub">Strength through control, not chaos.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-num">04</div>
+        <div class="b-label">For</div>
+        <div class="b-value italic">Any<span class="unit">level</span></div>
+        <p class="b-sub">Beginners are the default, not the exception.</p>
+      </div>
+    </div>
+    <div class="practice-detail fade-in">
+      <div class="pd-photo" style="background-image: url('photos/reformer.png');"></div>
+      <div>
+        <div class="pd-text">
+          <p>The reformer adjusts to you — springs scale the resistance, straps adapt to your reach, foot bars accommodate your height. There's no "right" body for Pilates. There's just the version that meets you.</p>
+          <p>Privates and semi-privates available for members who want guided 1:1 time. All Founding 250 members get priority booking on every format.</p>
+        </div>
+        <div class="pd-cta">
+          <a href="#founding" class="btn-link">Start with the Founding 250 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAUNA (RESTRUCTURED — bright + benefit cards) -->
+<section class="section-bright section-practice" id="sauna">
+  <div class="container">
+    <div class="practice-header fade-in">
+      <div>
+        <div class="eyebrow">02 · Infrared Sauna</div>
+        <h2>Pilates first. <em class="italic">Sauna after.</em></h2>
+      </div>
+      <p class="copy">The sauna is not an add-on. It's the second half of the ritual — a warm, quiet space to sweat, slow down, and leave reset.</p>
+    </div>
+    <div class="benefit-grid fade-in">
+      <div class="benefit-card">
+        <div class="b-num">01</div>
+        <div class="b-label">Duration</div>
+        <div class="b-value">15<span class="unit">min</span></div>
+        <p class="b-sub">Long enough to reset. Short enough to fit the day.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-num">02</div>
+        <div class="b-label">Temperature</div>
+        <div class="b-value">145<span class="unit">°F</span></div>
+        <p class="b-sub">Infrared. Warmer than it sounds. Quieter than you'd expect.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-num">03</div>
+        <div class="b-label">When</div>
+        <div class="b-value italic">Post<span class="unit">class</span></div>
+        <p class="b-sub">Walk straight from the reformer to the sauna.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-num">04</div>
+        <div class="b-label">For</div>
+        <div class="b-value italic">The<span class="unit">reset</span></div>
+        <p class="b-sub">Recovery, slow down, leave like yourself.</p>
+      </div>
+    </div>
+    <div class="practice-detail fade-in">
+      <div>
+        <div class="pd-text">
+          <p>Infrared sauna heats your body directly rather than the air around you, so the experience feels warm without being suffocating. The quiet is part of the design — no music, no screens, just the warm cedar walls and time to slow down.</p>
+          <p>Included in Founding membership. Designed to be used as a ritual, not an add-on.</p>
+        </div>
+        <div class="pd-cta">
+          <a href="#founding" class="btn-link">See the ritual →</a>
+        </div>
+      </div>
+      <div class="pd-photo" style="background-image: url('photos/sauna.png');"></div>
+    </div>
   </div>
 </section>
 
 <!-- FOUNDING 250 -->
-<section class="section section-founding" id="founding">
+<section class="section section-founding bright" id="founding">
   <div class="container">
     <div class="founding-top fade-in">
       <div class="spots-counter">
@@ -1532,6 +2131,7 @@ footer .footer-bottom {
           <li><span class="check">✓</span>Priority class booking</li>
           <li><span class="check">✓</span>Preview classes in July</li>
           <li><span class="check">✓</span>Founder-only events</li>
+          <li><span class="check">✓</span>Bring a friend — both get priority + first sauna free</li>
         </ul>
         <form id="foundingForm" onsubmit="return handleSubmit(event)">
           <div class="form-row">
@@ -1550,6 +2150,14 @@ footer .footer-bottom {
             <div class="form-field">
               <label for="phone">Phone</label>
               <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="friend-cta">
+            <div class="friend-row">
+              <input type="checkbox" id="bring-friend" name="bring_friend">
+              <label for="bring-friend">
+                <span class="it">Bring a friend.</span> Send me a share link — when you both join, you both get priority booking and a complimentary first sauna.
+              </label>
             </div>
           </div>
           <button type="submit" class="form-submit">Save My Founding Spot</button>
@@ -1690,6 +2298,26 @@ footer .footer-bottom {
   </div>
 </section>
 
+<!-- NEWSLETTER (secondary capture) -->
+<section class="section-newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <div class="eyebrow">Not ready to commit?</div>
+        <h3>Stay in <em class="it">the loop.</em></h3>
+        <p class="copy">Build updates as the studio comes together. Paint chips, equipment days, preview event invites. Two emails a month. Unsubscribe anytime.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="return handleNewsletterSubmit(event)">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="newsletter-success" id="newsletterSuccess">
+        Welcome in. We'll send the first update soon.
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="section section-final">
   <div class="container">
@@ -1777,18 +2405,20 @@ function updateHeaderState() {
   } else {
     header.classList.remove('scrolled');
   }
-  // Add on-light class when over light sections (FAQ + final CTA reverts to dark)
+  // Add on-light class when over any of the warm-bright sections
   const scrollY = window.scrollY + 80;
-  const faqEl = document.getElementById('faq');
-  if (faqEl) {
-    const faqTop = faqEl.offsetTop;
-    const faqBottom = faqTop + faqEl.offsetHeight;
-    if (scrollY > faqTop && scrollY < faqBottom) {
-      header.classList.add('on-light');
-    } else {
-      header.classList.remove('on-light');
+  const lightSections = ['practices', 'beginners', 'pilates', 'sauna', 'founding', 'faq'];
+  let onLight = false;
+  for (const id of lightSections) {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.offsetTop;
+      const bot = top + el.offsetHeight;
+      if (scrollY > top && scrollY < bot) { onLight = true; break; }
     }
   }
+  if (onLight) header.classList.add('on-light');
+  else header.classList.remove('on-light');
 }
 
 // Mobile sticky CTA visibility — show after hero, hide near founding form
@@ -1842,6 +2472,15 @@ function handleFollowupSubmit(e) {
 function skipFollowup() {
   document.getElementById('formSuccess').classList.add('complete');
   console.log('founding_followup_skip');
+}
+
+// Newsletter submission (mock)
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  document.getElementById('newsletterForm').classList.add('hidden');
+  document.getElementById('newsletterSuccess').classList.add('show');
+  console.log('newsletter_submit');
+  return false;
 }
 
 // Exit-intent overlay
