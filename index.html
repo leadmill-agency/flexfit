@@ -639,46 +639,121 @@ header.on-light.scrolled {
   z-index: 0;
 }
 .section-founding .container { position: relative; z-index: 2; }
+.founding-top {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.founding-top .spots-counter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 10px 22px;
+  border: 1px solid rgba(242, 235, 221, 0.32);
+  border-radius: 999px;
+  background: rgba(242, 235, 221, 0.04);
+}
+.founding-top .spots-counter .num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--figueroa);
+}
+.founding-top .spots-counter .lab {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(242, 235, 221, 0.72);
+}
+.founding-top .spots-bar {
+  display: block;
+  max-width: 280px;
+  height: 2px;
+  background: rgba(242, 235, 221, 0.15);
+  margin: 0 auto 28px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.founding-top .spots-bar-fill {
+  display: block;
+  height: 100%;
+  width: 10.8%;
+  background: var(--figueroa);
+  opacity: 0.8;
+}
+.founding-top .eyebrow { margin-bottom: 16px; }
+.founding-top h2 { margin-bottom: 14px; }
+.founding-top .sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 1.7vw, 28px);
+  opacity: 0.88;
+  max-width: 36ch;
+  margin: 0 auto;
+}
 .founding-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
-.founding-intro h2 { margin-bottom: 24px; }
-.founding-intro .sub {
+.founder-side { padding-top: 8px; }
+.founder-side .eyebrow { margin-bottom: 24px; opacity: 0.62; }
+.founder-side .quote {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(22px, 2vw, 30px);
-  opacity: 0.92;
+  font-size: clamp(32px, 3.5vw, 56px);
+  line-height: 1.18;
+  letter-spacing: -0.005em;
   margin-bottom: 32px;
 }
-.founding-intro .copy {
+.founder-side .body {
   font-size: var(--body-lg);
   line-height: 1.65;
   opacity: 0.88;
-  margin-bottom: 36px;
-  max-width: 44ch;
-}
-.founding-perks {
-  list-style: none;
   margin-bottom: 32px;
+  max-width: 38ch;
 }
-.founding-perks li {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(242, 235, 221, 0.25);
+.founder-side .attr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   font-family: var(--sans);
-  font-size: clamp(15px, 1.1vw, 18px);
-  opacity: 0.92;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  opacity: 0.78;
 }
-.founding-perks li:first-child { border-top: 1px solid rgba(242, 235, 221, 0.25); }
-.founding-perks .n {
+.founder-side .attr-line { width: 40px; height: 1px; background: currentColor; opacity: 0.5; }
+.founding-perks-mini {
+  list-style: none;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(242, 235, 221, 0.18);
+}
+.founding-perks-mini li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 7px 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.88;
+}
+.founding-perks-mini .check {
   font-family: var(--serif);
   font-style: italic;
+  color: var(--figueroa);
   opacity: 0.7;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .signup-form {
@@ -776,17 +851,183 @@ header.on-light.scrolled {
 .form-submit:hover { background: #fff; }
 .form-success {
   display: none;
-  padding: 28px;
+}
+.form-success.show { display: block; }
+.form-success .thanks {
+  padding: 24px 28px;
   background: rgba(242, 235, 221, 0.06);
   border: 1px solid rgba(242, 235, 221, 0.25);
   border-radius: 4px;
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(18px, 1.6vw, 22px);
+  font-size: clamp(17px, 1.5vw, 21px);
   line-height: 1.5;
   text-align: center;
+  margin-bottom: 28px;
 }
-.form-success.show { display: block; }
+.form-success .followup-intro {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.55;
+  opacity: 0.85;
+  margin-bottom: 22px;
+  text-align: center;
+}
+.form-success .skip {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.form-success.complete .followup-section { display: none; }
+.form-success.complete .final-thanks { display: block; }
+.form-success .final-thanks {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(16px, 1.3vw, 19px);
+  opacity: 0.78;
+}
+
+/* Exit-intent overlay */
+.exit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(8, 12, 14, 0.78);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.exit-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.exit-card {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  background:
+    linear-gradient(135deg, rgba(48, 60, 62, 0.96) 0%, rgba(28, 37, 40, 0.98) 100%);
+  color: var(--figueroa);
+  padding: 56px 40px 44px;
+  border: 1px solid rgba(242, 235, 221, 0.22);
+  border-radius: 6px;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+  text-align: center;
+}
+.exit-overlay.visible .exit-card { transform: translateY(0); }
+.exit-card .close-x {
+  position: absolute;
+  top: 14px; right: 18px;
+  background: transparent;
+  border: none;
+  color: var(--figueroa);
+  font-size: 28px;
+  font-weight: 200;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+  padding: 8px;
+}
+.exit-card .close-x:hover { opacity: 1; }
+.exit-card .eyebrow { margin-bottom: 18px; }
+.exit-card h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.exit-card h3 .it { font-style: italic; font-weight: 400; }
+.exit-card .copy {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.5;
+  opacity: 0.86;
+  margin-bottom: 28px;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.exit-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.exit-card input {
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid rgba(242, 235, 221, 0.32);
+  color: var(--figueroa);
+  font-family: var(--sans);
+  font-size: 16px;
+  border-radius: 0;
+}
+.exit-card input:focus {
+  outline: none;
+  border-color: var(--figueroa);
+}
+.exit-card input::placeholder { color: rgba(242, 235, 221, 0.42); }
+.exit-card .exit-submit {
+  margin-top: 8px;
+  padding: 16px;
+  background: var(--figueroa);
+  color: var(--quell);
+  border: none;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.exit-card .exit-submit:hover { background: #fff; }
+.exit-card .no-thanks {
+  display: block;
+  margin-top: 18px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.48;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.exit-card .exit-thanks {
+  display: none;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.5;
+  padding: 20px 0;
+}
+.exit-card.submitted form { display: none; }
+.exit-card.submitted .copy { display: none; }
+.exit-card.submitted .no-thanks { display: none; }
+.exit-card.submitted .exit-thanks { display: block; }
 
 @media (min-width: 1024px) {
   .founding-grid { grid-template-columns: 1fr 1.1fr; gap: 80px; }
@@ -1263,32 +1504,40 @@ footer .footer-bottom {
 <!-- FOUNDING 250 -->
 <section class="section section-founding" id="founding">
   <div class="container">
+    <div class="founding-top fade-in">
+      <div class="spots-counter">
+        <span class="num">27</span>
+        <span class="lab">of 250 spots claimed</span>
+      </div>
+      <span class="spots-bar"><span class="spots-bar-fill"></span></span>
+      <div class="eyebrow">Membership · N° 01</div>
+      <h2>The <em class="italic">Founding</em> 250.</h2>
+      <p class="sub">Our first members. Before we open July 30.</p>
+    </div>
     <div class="founding-grid">
-      <div class="founding-intro fade-in">
-        <div class="eyebrow">Membership · N° 01</div>
-        <h2>The <em class="italic">Founding</em> 250.</h2>
-        <p class="sub">Our first members. Before we open July 30.</p>
-        <p class="copy">Founding members get early access to the studio, priority booking, founder-only preview events, and the chance to help shape the first FlexFit community.</p>
-        <ul class="founding-perks">
-          <li><span class="n">i.</span><span>Founding member rate, locked in</span></li>
-          <li><span class="n">ii.</span><span>Priority class booking</span></li>
-          <li><span class="n">iii.</span><span>Preview classes in July</span></li>
-          <li><span class="n">iv.</span><span>Founder-only events</span></li>
-          <li><span class="n">v.</span><span>Limited to the first 250 members</span></li>
-        </ul>
+      <div class="founder-side fade-in">
+        <div class="eyebrow">A Note from Fakiha</div>
+        <p class="quote">"I wanted this for Sugar Land."</p>
+        <p class="body">A boutique studio that feels beautiful, social, and not intimidating. A place to move, sweat, reset, and actually want to come back to. If that's what you've been wishing for too — join us before the doors open.</p>
+        <div class="attr">
+          <span class="attr-line"></span>
+          <span>Fakiha Dawood, Founder</span>
+        </div>
       </div>
       <div class="signup-form fade-in" id="signup">
         <h3>Save your founding spot.</h3>
-        <p class="form-sub">Two minutes. No payment required.</p>
+        <p class="form-sub">Three fields. No payment required.</p>
+        <ul class="founding-perks-mini">
+          <li><span class="check">✓</span>Founding member rate, locked in</li>
+          <li><span class="check">✓</span>Priority class booking</li>
+          <li><span class="check">✓</span>Preview classes in July</li>
+          <li><span class="check">✓</span>Founder-only events</li>
+        </ul>
         <form id="foundingForm" onsubmit="return handleSubmit(event)">
-          <div class="form-row two">
+          <div class="form-row">
             <div class="form-field">
-              <label for="first">First name</label>
-              <input type="text" id="first" name="first" required>
-            </div>
-            <div class="form-field">
-              <label for="last">Last name</label>
-              <input type="text" id="last" name="last" required>
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required>
             </div>
           </div>
           <div class="form-row">
@@ -1300,52 +1549,62 @@ footer .footer-bottom {
           <div class="form-row">
             <div class="form-field">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label>Most interested in</label>
-              <div class="form-radio-group">
-                <input type="radio" id="int-pilates" name="interest" value="pilates">
-                <label for="int-pilates">Pilates</label>
-                <input type="radio" id="int-sauna" name="interest" value="sauna">
-                <label for="int-sauna">Sauna</label>
-                <input type="radio" id="int-both" name="interest" value="both" checked>
-                <label for="int-both">Both</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label>Preferred class time</label>
-              <div class="form-radio-group">
-                <input type="radio" id="t-morning" name="time" value="morning">
-                <label for="t-morning">Morning</label>
-                <input type="radio" id="t-midday" name="time" value="midday">
-                <label for="t-midday">Midday</label>
-                <input type="radio" id="t-evening" name="time" value="evening" checked>
-                <label for="t-evening">Evening</label>
-                <input type="radio" id="t-weekend" name="time" value="weekend">
-                <label for="t-weekend">Weekend</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label>Joining with a friend?</label>
-              <div class="form-radio-group">
-                <input type="radio" id="f-yes" name="friend" value="yes">
-                <label for="f-yes">Yes</label>
-                <input type="radio" id="f-no" name="friend" value="no" checked>
-                <label for="f-no">Not yet</label>
-              </div>
+              <input type="tel" id="phone" name="phone" required>
             </div>
           </div>
           <button type="submit" class="form-submit">Save My Founding Spot</button>
         </form>
         <div class="form-success" id="formSuccess">
-          You're on the Founding 250 list. We'll text you membership details and preview event access.
+          <div class="thanks">
+            You're on the Founding 250 list. We'll text you membership details and preview event access shortly.
+          </div>
+          <div class="followup-section">
+            <p class="followup-intro">A few quick questions so we can prep the right details for you.</p>
+            <form id="followupForm" onsubmit="return handleFollowupSubmit(event)">
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Most interested in</label>
+                  <div class="form-radio-group">
+                    <input type="radio" id="int-pilates" name="interest" value="pilates">
+                    <label for="int-pilates">Pilates</label>
+                    <input type="radio" id="int-sauna" name="interest" value="sauna">
+                    <label for="int-sauna">Sauna</label>
+                    <input type="radio" id="int-both" name="interest" value="both" checked>
+                    <label for="int-both">Both</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Preferred class time</label>
+                  <div class="form-radio-group">
+                    <input type="radio" id="t-morning" name="time" value="morning">
+                    <label for="t-morning">Morning</label>
+                    <input type="radio" id="t-midday" name="time" value="midday">
+                    <label for="t-midday">Midday</label>
+                    <input type="radio" id="t-evening" name="time" value="evening" checked>
+                    <label for="t-evening">Evening</label>
+                    <input type="radio" id="t-weekend" name="time" value="weekend">
+                    <label for="t-weekend">Weekend</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Joining with a friend?</label>
+                  <div class="form-radio-group">
+                    <input type="radio" id="f-yes" name="friend" value="yes">
+                    <label for="f-yes">Yes</label>
+                    <input type="radio" id="f-no" name="friend" value="no" checked>
+                    <label for="f-no">Not yet</label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">Send</button>
+              <a class="skip" onclick="skipFollowup(); return false;">Skip — text me when class times are set</a>
+            </form>
+            <p class="final-thanks">Thank you. We'll be in touch.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1489,6 +1748,23 @@ footer .footer-bottom {
 <!-- MOBILE STICKY CTA -->
 <a href="#founding" class="mobile-sticky-cta" id="mobileStickyCta">Join the Founding 250</a>
 
+<!-- EXIT-INTENT OVERLAY -->
+<div class="exit-overlay" id="exitOverlay" role="dialog" aria-modal="true" aria-labelledby="exitTitle">
+  <div class="exit-card" id="exitCard">
+    <button class="close-x" onclick="closeExitOverlay()" aria-label="Close">&times;</button>
+    <div class="eyebrow">Before You Go</div>
+    <h3 id="exitTitle">Get the <span class="it">Founding 250</span> details.</h3>
+    <p class="copy">Two fields. We'll text you membership details, preview class dates, and your founding rate. No spam.</p>
+    <form id="exitForm" onsubmit="return handleExitSubmit(event)">
+      <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+      <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      <button type="submit" class="exit-submit">Send me the details</button>
+    </form>
+    <a class="no-thanks" onclick="closeExitOverlay(); return false;">No thanks</a>
+    <div class="exit-thanks">You're on the list. We'll text you the founding details shortly.</div>
+  </div>
+</div>
+
 <script>
 // Header scroll state
 const header = document.getElementById('header');
@@ -1547,15 +1823,65 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Form submission (mock — just shows success message)
+// Form submission (mock — just shows success + followup)
+let formSubmitted = false;
 function handleSubmit(e) {
   e.preventDefault();
   document.getElementById('foundingForm').style.display = 'none';
   document.getElementById('formSuccess').classList.add('show');
-  // Analytics placeholder
+  formSubmitted = true;
   console.log('founding_form_submit');
   return false;
 }
+function handleFollowupSubmit(e) {
+  e.preventDefault();
+  document.getElementById('formSuccess').classList.add('complete');
+  console.log('founding_followup_submit');
+  return false;
+}
+function skipFollowup() {
+  document.getElementById('formSuccess').classList.add('complete');
+  console.log('founding_followup_skip');
+}
+
+// Exit-intent overlay
+function showExitOverlay() {
+  document.getElementById('exitOverlay').classList.add('visible');
+  console.log('exit_intent_shown');
+}
+function closeExitOverlay() {
+  document.getElementById('exitOverlay').classList.remove('visible');
+  try { localStorage.setItem('flexfit_exit_seen', '1'); } catch (e) {}
+}
+function handleExitSubmit(e) {
+  e.preventDefault();
+  document.getElementById('exitCard').classList.add('submitted');
+  console.log('exit_form_submit');
+  try { localStorage.setItem('flexfit_exit_seen', '1'); } catch (e) {}
+  setTimeout(closeExitOverlay, 2400);
+  return false;
+}
+
+let exitShown = false;
+document.addEventListener('mouseout', (e) => {
+  if (exitShown || formSubmitted) return;
+  try { if (localStorage.getItem('flexfit_exit_seen')) return; } catch (err) {}
+  // Only trigger when cursor leaves the top of the viewport
+  if (e.clientY <= 0 && !e.relatedTarget && !e.toElement) {
+    exitShown = true;
+    showExitOverlay();
+  }
+});
+// ESC closes
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('exitOverlay').classList.contains('visible')) {
+    closeExitOverlay();
+  }
+});
+// Click backdrop closes
+document.getElementById('exitOverlay').addEventListener('click', (e) => {
+  if (e.target.id === 'exitOverlay') closeExitOverlay();
+});
 
 // Fade-in on scroll
 const observer = new IntersectionObserver((entries) => {
