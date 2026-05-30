@@ -7,7 +7,7 @@
 <meta name="description" content="FlexFit HTX is a boutique wellness studio in Sugar Land offering reformer Pilates, infrared sauna, community events, and founding memberships before opening July 30.">
 
 <meta property="og:title" content="FlexFit HTX | Reformer Pilates + Infrared Sauna in Sugar Land">
-<meta property="og:description" content="A boutique wellness club for women who want to move, sweat, reset, and belong. Opening July 30.">
+<meta property="og:description" content="A boutique wellness club for Sugar Land — for movement, sauna, and reset. Opening July 30.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="photos/sauna.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -45,14 +45,14 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "Do I need Pilates experience?", "acceptedAnswer": {"@type": "Answer", "text": "No. Classes are guided. The reformer adjusts to you — springs, straps, and instructor cues scale every movement. Beginners are the default, not the exception."}},
-    {"@type": "Question", "name": "Is FlexFit beginner-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Classes are designed for women new to Pilates as well as those with experience. Instructors guide every movement and the reformer adjusts to your body."}},
+    {"@type": "Question", "name": "Is FlexFit beginner-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Classes are designed for first-timers and experienced practitioners alike. Instructors guide every movement and the reformer adjusts to your body."}},
     {"@type": "Question", "name": "What is reformer Pilates?", "acceptedAnswer": {"@type": "Answer", "text": "Reformer Pilates is a low-impact strength practice on a spring-loaded machine called a reformer. It builds control, strength, and stability through guided movement."}},
     {"@type": "Question", "name": "What should I wear?", "acceptedAnswer": {"@type": "Answer", "text": "Form-fitting activewear and grippy socks. We have grip socks available at the studio if you need a pair."}},
     {"@type": "Question", "name": "Is the sauna included?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Founding membership includes access to the infrared sauna before and after class."}},
     {"@type": "Question", "name": "When do you open?", "acceptedAnswer": {"@type": "Answer", "text": "FlexFit opens July 30 in Sugar Land. Founding 250 members get preview class access in July."}},
     {"@type": "Question", "name": "Where are you located?", "acceptedAnswer": {"@type": "Answer", "text": "FlexFit is in Sugar Land, TX. The exact address will be announced to Founding 250 members first."}},
     {"@type": "Question", "name": "What is the Founding 250?", "acceptedAnswer": {"@type": "Answer", "text": "Our first 250 members. Founding members get the founding rate, priority class booking, preview classes in July, and founder-only events."}},
-    {"@type": "Question", "name": "Can I come alone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most women do. FlexFit is built as a local third place — a beautiful, calm space designed to make solo arrivals feel welcome."}},
+    {"@type": "Question", "name": "Can I come alone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most members do. FlexFit is built as a local third place — a beautiful, calm space designed to make solo arrivals feel welcome."}},
     {"@type": "Question", "name": "Are there private sessions?", "acceptedAnswer": {"@type": "Answer", "text": "Private reformer sessions and small-group privates will be offered. Founding members get priority booking."}},
     {"@type": "Question", "name": "Will there be events?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Preview nights, founder walks, bring-a-friend classes, and private Pilates and sauna events are planned monthly."}},
     {"@type": "Question", "name": "How do I join?", "acceptedAnswer": {"@type": "Answer", "text": "Join the Founding 250 waitlist on this page or DM FOUNDING on Instagram."}}
@@ -1771,6 +1771,108 @@ footer .footer-bottom {
 }
 
 /* ============================================================ */
+/* INSTRUCTORS                                                   */
+/* ============================================================ */
+.section-instructors { padding: clamp(60px, 7vw, 100px) 0; }
+.instructors-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 768px) { .instructors-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+@media (min-width: 1024px) { .instructors-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+.instructor-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--quell-deep);
+  color: var(--figueroa);
+}
+.instructor-card .ic-photo { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.instructor-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(15,18,20,0.25) 0%, rgba(15,18,20,0.45) 50%, rgba(8,12,14,0.85) 100%);
+}
+.instructor-card .ic-content {
+  position: absolute; inset: 0; z-index: 2;
+  padding: 28px 24px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.instructor-card .ic-num {
+  font-family: var(--sans); font-size: 11px; font-weight: 300;
+  letter-spacing: 0.42em; text-transform: uppercase; opacity: 0.72;
+}
+.instructor-card .ic-status {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(24px, 2.4vw, 36px); line-height: 1.1;
+  margin-bottom: 14px;
+}
+.instructor-card .ic-status .italic { font-style: italic; font-weight: 400; }
+.instructor-card .ic-tag {
+  font-family: var(--sans); font-size: 11px; font-weight: 400;
+  letter-spacing: 0.32em; text-transform: uppercase; opacity: 0.78;
+}
+.instructor-1 .ic-photo { background-image: url('photos/sconce-hallway.png'); }
+.instructor-2 .ic-photo { background-image: url('photos/treatment-room.png'); }
+.instructor-3 .ic-photo { background-image: url('photos/vanity.png'); }
+.instructor-4 .ic-photo { background-image: url('photos/towel-display.png'); }
+
+/* ============================================================ */
+/* SCHEDULE                                                      */
+/* ============================================================ */
+.section-schedule { padding: clamp(60px, 7vw, 100px) 0; }
+.schedule-grid {
+  display: grid; gap: 1px;
+  background: rgba(66, 81, 83, 0.18);
+  margin-bottom: 56px;
+  max-width: 1100px; margin-left: auto; margin-right: auto;
+}
+.schedule-row {
+  display: grid; grid-template-columns: 1fr;
+  gap: 28px; background: var(--figueroa);
+  padding: 36px 32px;
+}
+@media (min-width: 768px) { .schedule-row { grid-template-columns: 280px 1fr; gap: 40px; align-items: start; } }
+.schedule-row .sr-header { display: flex; flex-direction: column; gap: 8px; }
+.schedule-row .sr-num {
+  font-family: var(--sans); font-size: 11px; font-weight: 400;
+  letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--mushroom); opacity: 0.72;
+}
+.schedule-row .sr-name {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1;
+  color: var(--quell);
+}
+.schedule-row .sr-detail {
+  font-family: var(--serif); font-style: italic; font-size: 16px;
+  color: var(--mushroom); opacity: 0.85;
+}
+.schedule-row .sr-times { display: flex; flex-direction: column; gap: 8px; }
+.schedule-row .time-slot {
+  font-family: var(--sans); font-size: 14px; line-height: 1.5;
+  color: var(--quell); opacity: 0.75;
+  padding: 10px 14px;
+  background: rgba(66, 81, 83, 0.04);
+  border-left: 2px solid rgba(66, 81, 83, 0.2);
+}
+.schedule-cta { text-align: center; max-width: 580px; margin: 0 auto; }
+.schedule-cta .schedule-note {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(17px, 1.4vw, 21px); line-height: 1.5;
+  color: var(--quell); opacity: 0.85; margin-bottom: 22px;
+}
+.schedule-cta .newsletter-form button { background: var(--quell); color: var(--figueroa); }
+.schedule-cta .newsletter-form button:hover { background: var(--quell-deep); }
+.schedule-cta .newsletter-form input { color: var(--quell); border-color: rgba(66, 81, 83, 0.32); }
+.schedule-cta .newsletter-form input::placeholder { color: rgba(66, 81, 83, 0.42); }
+.schedule-cta .newsletter-form input:focus { border-color: var(--quell); }
+.schedule-cta #scheduleSuccess { color: var(--quell); }
+.schedule-cta .schedule-footer {
+  margin-top: 28px;
+  font-family: var(--sans); font-size: 12px; font-weight: 300;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--mushroom); opacity: 0.55;
+}
+
+/* ============================================================ */
 /* MOBILE STICKY CTA                                            */
 /* ============================================================ */
 .mobile-sticky-cta {
@@ -1815,7 +1917,9 @@ footer .footer-bottom {
     <a href="#studio">Studio</a>
     <a href="#pilates">Pilates</a>
     <a href="#sauna">Sauna</a>
+    <a href="#instructors">Instructors</a>
     <a href="#founding">Founding 250</a>
+    <a href="#schedule">Schedule</a>
     <a href="#events">Events</a>
     <a href="#faq">FAQ</a>
   </nav>
@@ -1831,7 +1935,9 @@ footer .footer-bottom {
   <a href="#studio" onclick="toggleMenu()">Studio</a>
   <a href="#pilates" onclick="toggleMenu()">Pilates</a>
   <a href="#sauna" onclick="toggleMenu()">Sauna</a>
+  <a href="#instructors" onclick="toggleMenu()">Instructors</a>
   <a href="#founding" onclick="toggleMenu()">Founding 250</a>
+  <a href="#schedule" onclick="toggleMenu()">Schedule</a>
   <a href="#events" onclick="toggleMenu()">Events</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
 </div>
@@ -1841,7 +1947,7 @@ footer .footer-bottom {
   <div class="container">
     <div class="eyebrow">Opening July 30 · Sugar Land, TX</div>
     <h1>Reformer Pilates + Infrared Sauna in Sugar Land</h1>
-    <p class="sub">A boutique wellness club for women who want to move, sweat, reset, and belong.</p>
+    <p class="sub">A boutique wellness club for Sugar Land — for movement, sauna, and reset.</p>
     <div class="cta-row">
       <a href="#founding" class="btn btn-primary">Join the Founding 250</a>
       <a href="#studio" class="btn-link">See the studio →</a>
@@ -1875,7 +1981,7 @@ footer .footer-bottom {
           <span class="pc-num">02 · Practice</span>
           <div>
             <h3 class="pc-name">Infrared<br><span class="it">Sauna.</span></h3>
-            <p class="pc-copy">Post-class reset in warm, quiet, infrared heat. The second half of the ritual.</p>
+            <p class="pc-copy">A 30-minute infrared session for muscle recovery. Standalone or add-on.</p>
             <span class="pc-link">Learn more →</span>
           </div>
         </div>
@@ -1914,7 +2020,7 @@ footer .footer-bottom {
         <div class="label">02 · Sweat</div>
         <div>
           <div class="word">Sweat.</div>
-          <p class="copy" style="margin-top: 14px;">Infrared sauna after class for a quiet post-workout reset.</p>
+          <p class="copy" style="margin-top: 14px;">Infrared sauna for muscle recovery and quiet reset.</p>
         </div>
       </div>
       <div class="ritual-card r-reset fade-in">
@@ -1928,7 +2034,7 @@ footer .footer-bottom {
         <div class="label">04 · Belong</div>
         <div>
           <div class="word">Belong.</div>
-          <p class="copy" style="margin-top: 14px;">A local community for women building a routine.</p>
+          <p class="copy" style="margin-top: 14px;">A local community building a routine.</p>
         </div>
       </div>
     </div>
@@ -2018,14 +2124,14 @@ footer .footer-bottom {
       <div class="benefit-card">
         <div class="b-num">02</div>
         <div class="b-label">Class size</div>
-        <div class="b-value">8<span class="unit">max</span></div>
-        <p class="b-sub">Small groups. Every cue is for you.</p>
+        <div class="b-value">12<span class="unit">max</span></div>
+        <p class="b-sub">Small group reformer. Every cue is for you.</p>
       </div>
       <div class="benefit-card">
         <div class="b-num">03</div>
-        <div class="b-label">Intensity</div>
-        <div class="b-value italic">Low<span class="unit">impact</span></div>
-        <p class="b-sub">Strength through control, not chaos.</p>
+        <div class="b-label">Format</div>
+        <div class="b-value">Reformer</div>
+        <p class="b-sub">Spring-loaded reformer Pilates, guided.</p>
       </div>
       <div class="benefit-card">
         <div class="b-num">04</div>
@@ -2055,34 +2161,34 @@ footer .footer-bottom {
     <div class="practice-header fade-in">
       <div>
         <div class="eyebrow">02 · Infrared Sauna</div>
-        <h2>Pilates first. <em class="italic">Sauna after.</em></h2>
+        <h2><em class="italic">Infrared Sauna</em> in Sugar Land.</h2>
       </div>
-      <p class="copy">The sauna is not an add-on. It's the second half of the ritual — a warm, quiet space to sweat, slow down, and leave reset.</p>
+      <p class="copy">A 30-minute infrared session for muscle recovery. Use it standalone, or as a 15-minute add-on to a Pilates class. Temperature adjusts 120–130°F per session.</p>
     </div>
     <div class="benefit-grid fade-in">
       <div class="benefit-card">
         <div class="b-num">01</div>
         <div class="b-label">Duration</div>
-        <div class="b-value">15<span class="unit">min</span></div>
-        <p class="b-sub">Long enough to reset. Short enough to fit the day.</p>
+        <div class="b-value">30 / 15<span class="unit">min</span></div>
+        <p class="b-sub">Standalone session, or 15-min add-on with a Pilates class.</p>
       </div>
       <div class="benefit-card">
         <div class="b-num">02</div>
         <div class="b-label">Temperature</div>
-        <div class="b-value">145<span class="unit">°F</span></div>
-        <p class="b-sub">Infrared. Warmer than it sounds. Quieter than you'd expect.</p>
+        <div class="b-value">120–130<span class="unit">°F</span></div>
+        <p class="b-sub">Infrared, adjustable per session.</p>
       </div>
       <div class="benefit-card">
         <div class="b-num">03</div>
         <div class="b-label">When</div>
-        <div class="b-value italic">Post<span class="unit">class</span></div>
-        <p class="b-sub">Walk straight from the reformer to the sauna.</p>
+        <div class="b-value italic">Anytime</div>
+        <p class="b-sub">Before, between, after — or alone.</p>
       </div>
       <div class="benefit-card">
         <div class="b-num">04</div>
         <div class="b-label">For</div>
         <div class="b-value italic">The<span class="unit">reset</span></div>
-        <p class="b-sub">Recovery, slow down, leave like yourself.</p>
+        <p class="b-sub">Muscle recovery and reset.</p>
       </div>
     </div>
     <div class="practice-detail fade-in">
@@ -2096,6 +2202,58 @@ footer .footer-bottom {
         </div>
       </div>
       <div class="pd-photo" style="background-image: url('photos/sauna.png');"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTORS (placeholder) -->
+<section class="section-bright section-instructors" id="instructors">
+  <div class="container">
+    <div class="practices-header fade-in">
+      <div class="eyebrow">From Your Team</div>
+      <h2>Meet the <em class="italic">instructors.</em></h2>
+    </div>
+    <div class="instructors-grid">
+      <div class="instructor-card instructor-1 fade-in">
+        <div class="ic-photo"></div>
+        <div class="ic-content">
+          <span class="ic-num">Instructor · 01</span>
+          <div>
+            <p class="ic-status">Bio coming <em class="italic">July.</em></p>
+            <span class="ic-tag">Reformer Pilates</span>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card instructor-2 fade-in">
+        <div class="ic-photo"></div>
+        <div class="ic-content">
+          <span class="ic-num">Instructor · 02</span>
+          <div>
+            <p class="ic-status">Bio coming <em class="italic">July.</em></p>
+            <span class="ic-tag">Reformer Pilates</span>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card instructor-3 fade-in">
+        <div class="ic-photo"></div>
+        <div class="ic-content">
+          <span class="ic-num">Instructor · 03</span>
+          <div>
+            <p class="ic-status">Bio coming <em class="italic">July.</em></p>
+            <span class="ic-tag">Sauna</span>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card instructor-4 fade-in">
+        <div class="ic-photo"></div>
+        <div class="ic-content">
+          <span class="ic-num">Instructor · 04</span>
+          <div>
+            <p class="ic-status">Bio coming <em class="italic">July.</em></p>
+            <span class="ic-tag">Pilates + Sauna</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2116,8 +2274,9 @@ footer .footer-bottom {
     <div class="founding-grid">
       <div class="founder-side fade-in">
         <div class="eyebrow">A Note from Fakiha</div>
-        <p class="quote">"I wanted this for Sugar Land."</p>
-        <p class="body">A boutique studio that feels beautiful, social, and not intimidating. A place to move, sweat, reset, and actually want to come back to. If that's what you've been wishing for too — join us before the doors open.</p>
+        <p class="quote">Why we're building this.</p>
+        <p class="body">FlexFit is a boutique studio for Sugar Land — beautiful, social, easy to start. Reformer Pilates that meets you where you are. An infrared sauna for muscle recovery on its own schedule, not as an afterthought.</p>
+        <p class="body">We're inviting our first 250 members in before we open. If you've been wishing for this in Sugar Land — join us.</p>
         <div class="attr">
           <span class="attr-line"></span>
           <span>Fakiha Dawood, Founder</span>
@@ -2220,6 +2379,55 @@ footer .footer-bottom {
 </section>
 
 <!-- COMMUNITY / EVENTS -->
+<!-- SCHEDULE -->
+<section class="section-bright section-schedule" id="schedule">
+  <div class="container">
+    <div class="practices-header fade-in">
+      <div class="eyebrow">Class Schedule</div>
+      <h2>Booking opens <em class="italic">July 1.</em></h2>
+    </div>
+    <div class="schedule-grid fade-in">
+      <div class="schedule-row">
+        <div class="sr-header">
+          <span class="sr-num">01 · Service</span>
+          <h3 class="sr-name">Reformer Pilates</h3>
+          <p class="sr-detail">50-min guided reformer · max 12</p>
+        </div>
+        <div class="sr-times">
+          <span class="time-slot">Mon · 6:30am · 9:30am · 5:30pm</span>
+          <span class="time-slot">Tue · 6:30am · 9:30am · 5:30pm · 7:00pm</span>
+          <span class="time-slot">Wed · 6:30am · 9:30am · 5:30pm</span>
+          <span class="time-slot">Thu · 6:30am · 9:30am · 5:30pm · 7:00pm</span>
+          <span class="time-slot">Fri · 6:30am · 9:30am · 5:30pm</span>
+          <span class="time-slot">Sat · 8:00am · 9:30am · 11:00am</span>
+          <span class="time-slot">Sun · 9:00am · 10:30am</span>
+        </div>
+      </div>
+      <div class="schedule-row">
+        <div class="sr-header">
+          <span class="sr-num">02 · Service</span>
+          <h3 class="sr-name">Infrared Sauna</h3>
+          <p class="sr-detail">30-min standalone · 15-min add-on · 120–130°F</p>
+        </div>
+        <div class="sr-times">
+          <span class="time-slot">Daily · Walk-in or reservation</span>
+          <span class="time-slot">6:00am — 8:00pm</span>
+          <span class="time-slot">Add-on: bundled with any Pilates class booking</span>
+        </div>
+      </div>
+    </div>
+    <div class="schedule-cta fade-in">
+      <p class="schedule-note">Get notified the moment booking opens — plus a preview of the full schedule.</p>
+      <form class="newsletter-form" id="scheduleForm" onsubmit="return handleScheduleSubmit(event)">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Notify Me</button>
+      </form>
+      <div class="newsletter-success" id="scheduleSuccess">We'll text you the moment booking opens.</div>
+      <p class="schedule-footer">Booking powered by Mindbody · Liability waiver auto-attached</p>
+    </div>
+  </div>
+</section>
+
 <section class="section section-events" id="events">
   <div class="container">
     <div class="events-intro fade-in">
@@ -2227,7 +2435,7 @@ footer .footer-bottom {
         <div class="eyebrow">Community</div>
         <h2>Come alone. Leave with a <em class="italic">routine.</em></h2>
       </div>
-      <p class="copy">FlexFit is being built for the women who want movement, reset, and community in one place. No forced networking. No awkward icebreakers. Just a beautiful local place to actually want to be.</p>
+      <p class="copy">FlexFit is being built for Sugar Land — for movement, reset, and community. No forced networking. No awkward icebreakers. Just a beautiful local place to actually want to be.</p>
     </div>
     <div class="events-grid">
       <div class="event-card fade-in">
@@ -2242,14 +2450,14 @@ footer .footer-bottom {
         <div>
           <div class="meta">Community · Quarterly</div>
           <div class="name">Bring-a-Friend Class</div>
-          <p class="desc">Bring someone who's been curious about Pilates. Two reformers, one ritual, one shared sauna.</p>
+          <p class="desc">Bring someone who's been curious about Pilates. Two reformers and a shared sauna session.</p>
         </div>
         <a href="#founding" class="btn-link" style="font-size: 16px; margin-top: 20px;">RSVP →</a>
       </div>
       <div class="event-card fade-in">
         <div>
           <div class="meta">Reset · Sundays</div>
-          <div class="name">Girls' Reset Morning</div>
+          <div class="name">Sunday Reset Morning</div>
           <p class="desc">Sunday mornings designed for slow movement, sauna, and unrushed conversation. The reset before the week.</p>
         </div>
         <a href="#founding" class="btn-link" style="font-size: 16px; margin-top: 20px;">RSVP →</a>
@@ -2283,14 +2491,14 @@ footer .footer-bottom {
     </div>
     <div class="faq-list">
       <div class="faq-item"><button class="faq-question">Do I need Pilates experience?<span class="toggle">+</span></button><div class="faq-answer"><p>No. Classes are guided. The reformer adjusts to you — springs, straps, and instructor cues scale every movement. Beginners are the default, not the exception.</p></div></div>
-      <div class="faq-item"><button class="faq-question">Is FlexFit beginner-friendly?<span class="toggle">+</span></button><div class="faq-answer"><p>Yes. Classes are designed for women new to Pilates as well as those with experience. Instructors guide every movement and the reformer adjusts to your body.</p></div></div>
+      <div class="faq-item"><button class="faq-question">Is FlexFit beginner-friendly?<span class="toggle">+</span></button><div class="faq-answer"><p>Yes. Classes are designed for first-timers and experienced practitioners alike. Instructors guide every movement and the reformer adjusts to your body.</p></div></div>
       <div class="faq-item"><button class="faq-question">What is reformer Pilates?<span class="toggle">+</span></button><div class="faq-answer"><p>Reformer Pilates is a low-impact strength practice on a spring-loaded machine called a reformer. It builds control, strength, and stability through guided movement — no high-impact jumping, no heavy weights.</p></div></div>
       <div class="faq-item"><button class="faq-question">What should I wear?<span class="toggle">+</span></button><div class="faq-answer"><p>Form-fitting activewear and grippy socks. We have grip socks available at the studio if you need a pair.</p></div></div>
       <div class="faq-item"><button class="faq-question">Is the sauna included?<span class="toggle">+</span></button><div class="faq-answer"><p>Yes. Founding membership includes access to the infrared sauna before and after class.</p></div></div>
       <div class="faq-item"><button class="faq-question">When do you open?<span class="toggle">+</span></button><div class="faq-answer"><p>FlexFit opens July 30 in Sugar Land. Founding 250 members get preview class access in July, before doors open to the public.</p></div></div>
       <div class="faq-item"><button class="faq-question">Where are you located?<span class="toggle">+</span></button><div class="faq-answer"><p>FlexFit is in Sugar Land, TX, serving Sugar Land, Missouri City, Richmond, Stafford, and the surrounding Houston suburbs. The exact address will be announced to Founding 250 members first.</p></div></div>
       <div class="faq-item"><button class="faq-question">What is the Founding 250?<span class="toggle">+</span></button><div class="faq-answer"><p>Our first 250 members. Founding members get the founding rate (locked in), priority class booking, preview classes in July, and founder-only events before public launch.</p></div></div>
-      <div class="faq-item"><button class="faq-question">Can I come alone?<span class="toggle">+</span></button><div class="faq-answer"><p>Yes. Most women do. FlexFit is built as a local third place — a beautiful, calm space designed to make solo arrivals feel welcome, not awkward.</p></div></div>
+      <div class="faq-item"><button class="faq-question">Can I come alone?<span class="toggle">+</span></button><div class="faq-answer"><p>Yes. Most members do. FlexFit is built as a local third place — a beautiful, calm space designed to make solo arrivals feel welcome, not awkward.</p></div></div>
       <div class="faq-item"><button class="faq-question">Are there private sessions?<span class="toggle">+</span></button><div class="faq-answer"><p>Private reformer sessions and small-group privates will be offered. Founding members get priority booking on all formats.</p></div></div>
       <div class="faq-item"><button class="faq-question">Will there be events?<span class="toggle">+</span></button><div class="faq-answer"><p>Yes. Preview nights, founder walks, bring-a-friend classes, and private Pilates and sauna events are planned monthly. Founding members get first access.</p></div></div>
       <div class="faq-item"><button class="faq-question">How do I join?<span class="toggle">+</span></button><div class="faq-answer"><p>Join the Founding 250 waitlist on this page, or DM FOUNDING on Instagram and Fakiha will send you everything.</p></div></div>
@@ -2338,7 +2546,7 @@ footer .footer-bottom {
   <div class="footer-inner">
     <div class="col footer-brand">
       <span class="wordmark">FlexFit</span>
-      <p>A boutique wellness club for women who want to move, sweat, reset, and belong. Opening July 30 in Sugar Land.</p>
+      <p>A boutique wellness club for Sugar Land — for movement, sauna, and reset. Opening July 30 in Sugar Land.</p>
     </div>
     <div class="col">
       <h4>Studio</h4>
@@ -2407,7 +2615,7 @@ function updateHeaderState() {
   }
   // Add on-light class when over any of the warm-bright sections
   const scrollY = window.scrollY + 80;
-  const lightSections = ['practices', 'beginners', 'pilates', 'sauna', 'founding', 'faq'];
+  const lightSections = ['practices', 'beginners', 'pilates', 'sauna', 'instructors', 'founding', 'schedule', 'faq'];
   let onLight = false;
   for (const id of lightSections) {
     const el = document.getElementById(id);
@@ -2472,6 +2680,15 @@ function handleFollowupSubmit(e) {
 function skipFollowup() {
   document.getElementById('formSuccess').classList.add('complete');
   console.log('founding_followup_skip');
+}
+
+// Schedule notify submission (mock)
+function handleScheduleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('scheduleForm').classList.add('hidden');
+  document.getElementById('scheduleSuccess').classList.add('show');
+  console.log('schedule_notify_submit');
+  return false;
 }
 
 // Newsletter submission (mock)
