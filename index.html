@@ -2292,7 +2292,9 @@ footer .footer-bottom {
           <li><span class="check">✓</span>Founder-only events</li>
           <li><span class="check">✓</span>Bring a friend — both get priority + first sauna free</li>
         </ul>
-        <form id="foundingForm" onsubmit="return handleSubmit(event)">
+        <form id="foundingForm" name="founding-250" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+          <input type="hidden" name="form-name" value="founding-250">
+          <p hidden aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-row">
             <div class="form-field">
               <label for="name">Full name</label>
@@ -2327,7 +2329,9 @@ footer .footer-bottom {
           </div>
           <div class="followup-section">
             <p class="followup-intro">A few quick questions so we can prep the right details for you.</p>
-            <form id="followupForm" onsubmit="return handleFollowupSubmit(event)">
+            <form id="followupForm" name="founding-followup" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleFollowupSubmit(event)">
+              <input type="hidden" name="form-name" value="founding-followup">
+              <p hidden aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
               <div class="form-row">
                 <div class="form-field">
                   <label>Most interested in</label>
@@ -2418,7 +2422,9 @@ footer .footer-bottom {
     </div>
     <div class="schedule-cta fade-in">
       <p class="schedule-note">Get notified the moment booking opens — plus a preview of the full schedule.</p>
-      <form class="newsletter-form" id="scheduleForm" onsubmit="return handleScheduleSubmit(event)">
+      <form class="newsletter-form" id="scheduleForm" name="schedule-notify" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleScheduleSubmit(event)">
+        <input type="hidden" name="form-name" value="schedule-notify">
+        <p hidden aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <input type="email" name="email" placeholder="Your email" required>
         <button type="submit">Notify Me</button>
       </form>
@@ -2515,7 +2521,9 @@ footer .footer-bottom {
         <h3>Stay in <em class="it">the loop.</em></h3>
         <p class="copy">Build updates as the studio comes together. Paint chips, equipment days, preview event invites. Two emails a month. Unsubscribe anytime.</p>
       </div>
-      <form class="newsletter-form" id="newsletterForm" onsubmit="return handleNewsletterSubmit(event)">
+      <form class="newsletter-form" id="newsletterForm" name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleNewsletterSubmit(event)">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p hidden aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <input type="email" name="email" placeholder="Your email" required>
         <button type="submit">Subscribe</button>
       </form>
@@ -2591,7 +2599,9 @@ footer .footer-bottom {
     <div class="eyebrow">Before You Go</div>
     <h3 id="exitTitle">Get the <span class="it">Founding 250</span> details.</h3>
     <p class="copy">Two fields. We'll text you membership details, preview class dates, and your founding rate. No spam.</p>
-    <form id="exitForm" onsubmit="return handleExitSubmit(event)">
+    <form id="exitForm" name="exit-founding" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleExitSubmit(event)">
+      <input type="hidden" name="form-name" value="exit-founding">
+      <p hidden aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <input type="text" name="name" placeholder="Your name" required autocomplete="name">
       <input type="email" name="email" placeholder="Email" required autocomplete="email">
       <button type="submit" class="exit-submit">Send me the details</button>
@@ -2661,42 +2671,53 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Form submission (mock — just shows success + followup)
+// Form submission — AJAX POST to Netlify Forms so submissions are captured
+// AND the on-page thank-you UX still works (no page reload). Submissions show
+// up in the Netlify dashboard (Site → Forms) + email notifications.
+function postNetlify(form) {
+  const body = new URLSearchParams(new FormData(form)).toString();
+  return fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body
+  });
+}
 let formSubmitted = false;
 function handleSubmit(e) {
   e.preventDefault();
-  document.getElementById('foundingForm').style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
-  formSubmitted = true;
-  console.log('founding_form_submit');
+  const show = () => {
+    document.getElementById('foundingForm').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+    formSubmitted = true;
+  };
+  postNetlify(e.target).then(show, (err) => { console.error('founding submit failed', err); show(); });
   return false;
 }
 function handleFollowupSubmit(e) {
   e.preventDefault();
-  document.getElementById('formSuccess').classList.add('complete');
-  console.log('founding_followup_submit');
+  const show = () => document.getElementById('formSuccess').classList.add('complete');
+  postNetlify(e.target).then(show, show);
   return false;
 }
 function skipFollowup() {
   document.getElementById('formSuccess').classList.add('complete');
-  console.log('founding_followup_skip');
 }
-
-// Schedule notify submission (mock)
 function handleScheduleSubmit(e) {
   e.preventDefault();
-  document.getElementById('scheduleForm').classList.add('hidden');
-  document.getElementById('scheduleSuccess').classList.add('show');
-  console.log('schedule_notify_submit');
+  const show = () => {
+    document.getElementById('scheduleForm').classList.add('hidden');
+    document.getElementById('scheduleSuccess').classList.add('show');
+  };
+  postNetlify(e.target).then(show, show);
   return false;
 }
-
-// Newsletter submission (mock)
 function handleNewsletterSubmit(e) {
   e.preventDefault();
-  document.getElementById('newsletterForm').classList.add('hidden');
-  document.getElementById('newsletterSuccess').classList.add('show');
-  console.log('newsletter_submit');
+  const show = () => {
+    document.getElementById('newsletterForm').classList.add('hidden');
+    document.getElementById('newsletterSuccess').classList.add('show');
+  };
+  postNetlify(e.target).then(show, show);
   return false;
 }
 
@@ -2711,10 +2732,12 @@ function closeExitOverlay() {
 }
 function handleExitSubmit(e) {
   e.preventDefault();
-  document.getElementById('exitCard').classList.add('submitted');
-  console.log('exit_form_submit');
-  try { localStorage.setItem('flexfit_exit_seen', '1'); } catch (e) {}
-  setTimeout(closeExitOverlay, 2400);
+  const show = () => {
+    document.getElementById('exitCard').classList.add('submitted');
+    try { localStorage.setItem('flexfit_exit_seen', '1'); } catch (err) {}
+    setTimeout(closeExitOverlay, 2400);
+  };
+  postNetlify(e.target).then(show, show);
   return false;
 }
 
