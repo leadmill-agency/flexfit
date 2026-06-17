@@ -2671,19 +2671,15 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-// Lead capture via Web3Forms (host-agnostic — works on Vercel). Submissions are
-// emailed to the address tied to the access key. AJAX POST keeps the on-page
-// thank-you UX (no reload).
-// ⚠️ Get a FREE key at https://web3forms.com (enter your email → key) and paste it
-// below. This key is PUBLIC by design (it lives in the page) and only routes form
-// emails — it is NOT a secret. Forms won't capture until this is filled in.
-const WEB3FORMS_KEY = 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY';
+// Lead capture → beehiiv, via our own /api/subscribe serverless function
+// (keeps the beehiiv API key server-side). AJAX POST keeps the on-page thank-you UX.
 function submitForm(form) {
-  const data = new FormData(form);
-  data.append('access_key', WEB3FORMS_KEY);
-  data.append('subject', 'FlexFit website — ' + (form.getAttribute('name') || 'form'));
-  data.append('from_name', 'FlexFit HTX');
-  return fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+  const payload = Object.fromEntries(new FormData(form).entries());
+  return fetch('/api/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
 }
 let formSubmitted = false;
 function handleSubmit(e) {
