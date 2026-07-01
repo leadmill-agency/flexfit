@@ -6,7 +6,7 @@
 //   BEEHIIV_PUBLICATION_ID   (looks like  pub_xxxxxxxx ; not secret)
 //
 // Optional: create custom fields in beehiiv (Settings → Custom Fields) named
-//   First Name · Phone · Interest · Preferred Time
+//   First Name · Phone · Interest · Preferred Time · Bringing Friend
 // so the extra fields attach to subscribers. If they don't exist, this function
 // retries without them so the email is still captured.
 
@@ -39,6 +39,7 @@ module.exports = async (req, res) => {
   add('Phone', body.phone);
   add('Interest', body.interest);
   add('Preferred Time', body.time);
+  add('Bringing Friend', body.bring_friend === 'on' ? 'yes' : body.friend);
 
   const subscribe = (withCustom) => fetch(
     `https://api.beehiiv.com/v2/publications/${PUB_ID}/subscriptions`,
